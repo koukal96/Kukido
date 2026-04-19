@@ -1,0 +1,17 @@
+[
+  { "id": "p1", "name": "Chytrý prsten s AI (Sleep & Fitness)", "price": 4990, "image": "💍" },
+  { "id": "p2", "name": "Chytrý difuzér s efektem ohně", "price": 890, "image": "🔥" },
+  { "id": "p3", "name": "Zátěžová deka pro hluboký spánek", "price": 1790, "image": "🛌" },
+  { "id": "p4", "name": "Magnetická powerbanka s chlazením", "price": 990, "image": "🔋" },
+  { "id": "p5", "name": "Mini projektor s Android TV", "price": 3490, "image": "📽️" },
+  { "id": "p6", "name": "Glow-up LED terapeutická maska", "price": 2490, "image": "🎭" },
+  { "id": "p7", "name": "Přenosný espresso kávovar na aku", "price": 1590, "image": "☕" },
+  { "id": "p8", "name": "Sluchátka na lícní kosti", "price": 2190, "image": "🎧" },
+  { "id": "p9", "name": "Chytrá lahev s UV-C sterilizací", "price": 1190, "image": "💧" },
+  { "id": "p10", "name": "Masážní pistole s vyhříváním", "price": 2290, "image": "💆‍♂️" },
+  { "id": "p11", "name": "Ergonomická vertikální myš Pro", "price": 1290, "image": "🖱️" },
+  { "id": "p12", "name": "Batoh s integrovaným solárem", "price": 2890, "image": "🎒" },
+  { "id": "p13", "name": "Levitující měsíční lampička", "price": 1890, "image": "🌕" },
+  { "id": "p14", "name": "Kapslový USB-C mixér", "price": 1090, "image": "🥤" },
+  { "id": "p15", "name": "Vyhřívaná vesta (ovládání přes app)", "price": 1390, "image": "🧥" }
+]
