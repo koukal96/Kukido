@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export default function Cart({ isOpen, onClose, cartItems }) {
   const [zasilkovnaPoint, setZasilkovnaPoint] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
@@ -9,6 +10,34 @@ export default function Cart({ isOpen, onClose, cartItems }) {
 
   const openZasilkovna = () => {
     setZasilkovnaPoint("Výdejní místo: AlzaBox, Praha (ID: 12345)");
+  };
+
+  // 🚀 TADY JE TVŮJ NOVÝ MOZEK!
+  const handleCheckout = async () => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('https://hook.eu1.make.com/yjttc46lyr5vqfg4ckk82kobzqlyp4rj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: cartItems,
+          totalPrice: cartTotal,
+          shippingInfo: zasilkovnaPoint || "Nevybrána pobočka"
+        })
+      });
+
+      if (response.ok) {
+        alert("🎉 Super! Data úspěšně dorazila do Make.com!");
+      } else {
+        alert("Něco se pokazilo při odesílání.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Chyba připojení.");
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -51,8 +80,12 @@ export default function Cart({ isOpen, onClose, cartItems }) {
               <span>{cartTotal} Kč</span>
             </div>
 
-            <button className="w-full bg-blue-500 text-white font-black text-lg py-4 rounded-2xl hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
-              💳 Zaplatit přes GoPay
+            <button 
+              onClick={handleCheckout}
+              disabled={isSubmitting}
+              className="w-full bg-blue-500 text-white font-black text-lg py-4 rounded-2xl hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30 disabled:bg-gray-400"
+            >
+              {isSubmitting ? 'Zpracovávám...' : '💳 Zaplatit přes GoPay'}
             </button>
           </div>
         )}
