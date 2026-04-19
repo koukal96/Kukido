@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/kukido',
-  assetPrefix: '/kukido/',
+  basePath: '/Kukido',
+  assetPrefix: '/Kukido/',
   images: {
     unoptimized: true,
   }
